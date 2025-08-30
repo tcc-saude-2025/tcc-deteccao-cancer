@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autoavaliação de Risco de Câncer</title>
+    <link rel="stylesheet" href="/styles/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+    <main class="container page-auth hidden" id="page-auth">
+        <div class="card">
+            <h1 class="title">Olá!</h1>
+            <p class="subtitle">Para acessar sua avaliação, faça login ou cadastre-se.</p>
+            <div class="form-field">
+                <label for="auth-email">Email</label>
+                <input type="email" id="auth-email" class="input-field" placeholder="seuemail@exemplo.com">
+            </div>
+            <div class="form-field">
+                <label for="auth-password">Senha</label>
+                <input type="password" id="auth-password" class="input-field" placeholder="••••••••">
+            </div>
+            <button class="button button-primary" id="login-button">Entrar</button>
+            <p class="switch-auth-text">Ainda não tem conta? <a href="#" id="show-register">Cadastre-se</a></p>
+        </div>
+    </main>
+
+    <main class="container page-home hidden" id="page-home">
+        <div class="card">
+            <h1 class="title">Autoavaliação de Risco</h1>
+            <p class="subtitle">Este site ajuda você a estimar seu risco relativo de câncer com base em fatores conhecidos (idade, hábitos, histórico familiar). Não substitui consulta médica.</p>
+            <button class="button button-primary" id="start-button">Começar avaliação</button>
+            <button class="button button-secondary logout-button" id="logout-button">Sair</button>
+        </div>
+    </main>
+
+    <main class="container page-form hidden" id="page-form">
+        <div class="card">
+            <div class="progress-bar">
+                <div class="progress-bar-fill" id="progress-bar-fill"></div>
+            </div>
+            <div id="form-content">
+                </div>
+        </div>
+    </main>
+
+    <main class="container page-results hidden" id="page-results">
+        <div class="card">
+            <h1 class="title">Seu Resultado</h1>
+            <div class="result-display">
+                <div class="result-icon-container" id="result-icon">
+                    <div class="result-icon-fill"></div>
+                </div>
+                <h2 class="result-text" id="result-text"></h2>
+                <p class="result-description" id="result-description"></p>
+            </div>
+
+            <div class="button-group">
+                <button class="button button-secondary" id="restart-button">Refazer avaliação</button>
+                <button class="button button-primary" id="view-tips-button">Ver dicas para reduzir risco</button>
+                <button class="button button-secondary" id="view-history-button">Ver histórico</button>
+            </div>
+
+            <div class="share-buttons">
+                <a href="#" id="whatsapp-share" class="share-button whatsapp-button" target="_blank">
+                    <i data-lucide="message-square"></i> WhatsApp
+                </a>
+                <a href="#" id="telegram-share" class="share-button telegram-button" target="_blank">
+                    <i data-lucide="send"></i> Telegram
+                </a>
+            </div>
+            <button class="button button-secondary mt-8 logout-button">Sair</button>
+        </div>
+    </main>
+    
+    <main class="container page-tips hidden" id="page-tips">
+        <div class="card">
+            <h1 class="title">Dicas para Reduzir o Risco</h1>
+            <div class="tips-section" id="tips-content">
+                </div>
+            <div class="button-group mt-8">
+                <button class="button button-secondary" id="back-from-tips-button">Voltar</button>
+            </div>
+        </div>
+    </main>
+
+    <main class="container page-history hidden" id="page-history">
+        <div class="card">
+            <h1 class="title">Seu Histórico</h1>
+            <p class="subtitle">Veja a sua evolução e os resultados de avaliações passadas.</p>
+            <div class="history-section" id="history-content">
+            </div>
+            <div class="button-group mt-8">
+                <button class="button button-secondary" id="back-from-history-button">Voltar</button>
+            </div>
+        </div>
+    </main>
+    
+    <button class="dark-mode-toggle" id="dark-mode-toggle">
+        <i data-lucide="moon" id="dark-mode-icon"></i>
+    </button>
+
+    <script src="/scripts/script.js" defer></script>
+</body>
+</html>
